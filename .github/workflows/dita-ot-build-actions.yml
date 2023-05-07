@@ -2,7 +2,7 @@ name: CI
 'on':
   push:
     branches:
-      - main
+      - dev
 jobs:
   build-dita:
     name: Build DITA
@@ -15,7 +15,7 @@ jobs:
         uses: dita-ot/dita-ot-action@master
         with:
           input: document.ditamap
-          transtype: pdf
+          transtype: html5
           output-path: out
           
       - name: Upload DITA Output to a ZIP file
@@ -28,5 +28,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: mama # The branch the action should deploy to.
+          BRANCH: test # The branch the action should deploy to.
           FOLDER: out # The folder the action should deploy.
