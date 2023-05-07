@@ -16,17 +16,17 @@ jobs:
         with:
           input: document.ditamap
           transtype: pdf
-          output-path: foo
+          output-path: out
           
       - name: Upload DITA Output to a ZIP file
         uses: actions/upload-artifact@v3
         with:
           name: dita-artifact
-          path: 'foo'
+          path: 'out'
           
       - name: Deploy DITA Output to branch
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: shart # The branch the action should deploy to.
-          FOLDER: foo # The folder the action should deploy.
+          BRANCH: mama # The branch the action should deploy to.
+          FOLDER: out # The folder the action should deploy.
