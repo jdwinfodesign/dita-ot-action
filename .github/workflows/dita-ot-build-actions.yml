@@ -16,13 +16,13 @@ jobs:
         with:
           input: document.ditamap
           transtype: pdf
-          output-path: foo
+          output-path: out
           
       - name: Upload DITA Output to a ZIP file
         uses: actions/upload-artifact@v3
         with:
           name: dita-artifact
-          path: 'foo'
+          path: 'out'
           
       - name: Deploy DITA Output to branch
         uses: JamesIves/github-pages-deploy-action@4.1.1
